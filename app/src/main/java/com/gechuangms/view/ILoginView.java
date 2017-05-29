@@ -5,4 +5,16 @@ package com.gechuangms.view;
  */
 
 public interface ILoginView {
+
+    public static final String TAG = "ILoginView";
+
+    void onLoginSuccess();
+
+    void onLoginFail();
+
+    void onUserNameError();
+
+    void onPasswordError();
+
+    void onStartLogin();
 }

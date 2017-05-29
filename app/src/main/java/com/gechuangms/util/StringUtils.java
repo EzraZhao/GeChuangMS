@@ -5,8 +5,9 @@ package com.gechuangms.util;
  */
 
 public class StringUtils {
+
     //账号匹配，格式为20**20****
-    private static final String USER_NAME_REGEX = "^20[1-9]{2}20[0-9]{4}$";
+    private static final String USER_NAME_REGEX = "^20[0-9]{8}$";
     //密码匹配，格式为至少6个字符
     private static final String PASSWORD_REGEX = "^.{6,20}$";
 

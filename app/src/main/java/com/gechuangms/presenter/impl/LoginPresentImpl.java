@@ -7,4 +7,10 @@ import com.gechuangms.presenter.ILoginPresent;
  */
 
 public class LoginPresentImpl implements ILoginPresent {
+
+
+    @Override
+    public void login(String userName, String password) {
+
+    }
 }

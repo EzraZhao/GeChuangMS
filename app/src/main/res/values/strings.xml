@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GeChuangMS</string>
+
+    <string name="dynamic">dynamic</string>
+    <string name="contacts">contacts</string>
+    <string name="related">related</string>
 </resources>

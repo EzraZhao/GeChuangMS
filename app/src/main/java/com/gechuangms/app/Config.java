@@ -5,4 +5,8 @@ package com.gechuangms.app;
  */
 
 public class Config {
+
+    public static final int USER_GROUP_MEMBER = 1;
+    public static final int USER_GROUP_OFFICER = 2;
+
 }

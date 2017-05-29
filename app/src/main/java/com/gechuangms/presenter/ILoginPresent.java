@@ -5,4 +5,8 @@ package com.gechuangms.presenter;
  */
 
 public interface ILoginPresent {
+
+    public static final String TAG ="ILoginPresent";
+
+    void login(String userName, String password);
 }
