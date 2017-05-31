@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="gc_blue">#00acff</color>
+
+    <color name="nav_header_tv_user_name">#FFF</color>
 </resources>

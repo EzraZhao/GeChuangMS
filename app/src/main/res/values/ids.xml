@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--activity_main-->
+    <item name="drawer_layout" type="id" />
     <item name="fragment_container" type="id" />
+    <item name="toobar" type="id" />
     <item name="bottomBar" type="id" />
+    <item name="toobar_something" type="id" />
+    <item name="nav_view" type="id" />
+    <!--nav_menu-->
+    <item name="nav_brief_introduction" type="id"/>
+    <item name="nav_elegant_demeanour" type="id"/>
+    <item name="nav_about_us" type="id"/>
+    <item name="nav_new_blood" type="id"/>
+    <!--nav_header-->
+    <item name="ic_user_image" type="id" />
+    <item name="tv_user_name" type="id" />
+    <!--bottombar_tabs-->
     <item name="dynamic" type="id" />
     <item name="contacts" type="id" />
     <item name="related" type="id" />

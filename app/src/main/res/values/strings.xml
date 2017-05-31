@@ -4,4 +4,19 @@
     <string name="dynamic">dynamic</string>
     <string name="contacts">contacts</string>
     <string name="related">related</string>
+
+    <string name="must_acept_all_permission_can_use_app">must acept all permission can use app</string>
+    <string name="some_errors_happend">some errors happend</string>
+
+    <string name="toolbar_logo">toolbarLogo</string>
+    <string name="toolbar_dosomething_like_add">dosomething</string>
+
+    <string name="str_nav_brief_introduction">biref introduction</string>
+    <string name="str_nav_elegant_demeanour">elegant demeanour</string>
+    <string name="str_nav_about_us">about us</string>
+    <string name="str_nav_new_blood">new blood</string>
+
+    <string name="str_tips">please wait...</string>
+
+
 </resources>
