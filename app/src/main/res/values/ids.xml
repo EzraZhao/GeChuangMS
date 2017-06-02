@@ -5,8 +5,12 @@
     <item name="fragment_container" type="id" />
     <item name="toobar" type="id" />
     <item name="bottomBar" type="id" />
-    <item name="toobar_something" type="id" />
     <item name="nav_view" type="id" />
+
+    <item name="toobar_back" type="id" />
+    <item name="toobar_title" type="id" />
+    <item name="toobar_something" type="id" />
+
     <!--nav_menu-->
     <item name="nav_brief_introduction" type="id"/>
     <item name="nav_elegant_demeanour" type="id"/>
@@ -19,4 +23,10 @@
     <item name="dynamic" type="id" />
     <item name="contacts" type="id" />
     <item name="related" type="id" />
+
+    <!--fragment_dynamic-->
+    <item name="dynamic_swipe_refresh" type="id" />
+    <item name="dynamic_recycle_view" type="id" />
+    <item name="iv_message_image" type="id" />
+    <item name="tv_message_title" type="id" />
 </resources>

@@ -3,9 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/toolbar_back"
+        android:icon="@mipmap/ic_left_back"
+        android:title="@string/toolbar_doback"
+        app:showAsAction="always"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/toolbar_title"
+        android:title="@string/toolbar_title_message"
+        app:showAsAction="always"
+        android:visible="false"/>
+
+
+    <item
         android:id="@+id/toobar_something"
         android:icon="@mipmap/ic_action_add"
-        app:showAsAction="always"
-        android:title="@string/toolbar_dosomething_like_add"/>
+        android:title="@string/toolbar_dosomething_like_add"
+        android:visibility="gone"
+        app:showAsAction="always" />
 
 </menu>

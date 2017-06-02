@@ -9,16 +9,16 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-
 import com.gechuangms.R;
+import com.gechuangms.adapter.DynamicMessageAdapter;
 import com.gechuangms.factory.FragmentFactory;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
-
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
@@ -47,6 +47,7 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
+    synchronized
     @Override
     protected void init() {
         super.init();
@@ -58,12 +59,12 @@ public class MainActivity extends BaseActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.mipmap.ic_menu);
+            actionBar.setHomeAsUpIndicator(R.mipmap.ic_logo_menu);
         }
-        //设置策划菜单监听
+
+        //设置侧滑菜单监听
         mNavigationView.setCheckedItem(R.id.nav_brief_introduction);
         mNavigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener());
-
     }
 
     private OnTabSelectListener mOnTabSelectListener = new OnTabSelectListener() {

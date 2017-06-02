@@ -4,22 +4,22 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_brief_introduction"
-            android:icon="@mipmap/ic_nav_introduction"
+            android:icon="@mipmap/ic_jian"
             android:title="@string/str_nav_brief_introduction" />
 
         <item
             android:id="@+id/nav_elegant_demeanour"
-            android:icon="@mipmap/ic_nav_elegant_demeanour"
+            android:icon="@mipmap/ic_feng"
             android:title="@string/str_nav_elegant_demeanour" />
 
         <item
             android:id="@+id/nav_about_us"
-            android:icon="@mipmap/ic_nav_about_us"
+            android:icon="@mipmap/ic_a"
             android:title="@string/str_nav_about_us" />
 
         <item
             android:id="@+id/nav_new_blood"
-            android:icon="@mipmap/ic_nav_new_blood"
+            android:icon="@mipmap/ic_action_group_add"
             android:title="@string/str_nav_new_blood" />
     </group>
 </menu>

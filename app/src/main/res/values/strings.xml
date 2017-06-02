@@ -8,8 +8,9 @@
     <string name="must_acept_all_permission_can_use_app">must acept all permission can use app</string>
     <string name="some_errors_happend">some errors happend</string>
 
-    <string name="toolbar_logo">toolbarLogo</string>
     <string name="toolbar_dosomething_like_add">dosomething</string>
+    <string name="toolbar_doback">doback</string>
+    <string name="toolbar_title_message">title</string>
 
     <string name="str_nav_brief_introduction">biref introduction</string>
     <string name="str_nav_elegant_demeanour">elegant demeanour</string>
@@ -17,6 +18,10 @@
     <string name="str_nav_new_blood">new blood</string>
 
     <string name="str_tips">please wait...</string>
+
+    <string name="str_header_signature">Jack of all trades and master of none.</string>
+
+    <string name="load_message_success">load message success</string>
 
 
 </resources>

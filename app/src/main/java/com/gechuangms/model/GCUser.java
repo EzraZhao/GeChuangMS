@@ -15,29 +15,31 @@ public class GCUser extends DataSupport {
 
     private String userNickName;
     private String userName;
+    private String userSignature;
     private int userAge;
     private int userGrade;
     private String userDepartment;
-    private long userPhone;
+    private String userPhone;
     private String userIconUrl;
 
     public GCUser() {
     }
 
-    public GCUser(String userAccount, String userPassword, int userGroup, long userPhone) {
+    public GCUser(String userAccount, String userPassword, int userGroup, String userPhone) {
         this.userAccount = userAccount;
         this.userPassword = userPassword;
         this.userGroup = userGroup;
         this.userPhone = userPhone;
     }
 
-    public GCUser(int userId, String userAccount, String userPassword, int userGroup, String userNickName, String userName, int userAge, int userGrade, String userDepartment, long userPhone, String userIconUrl) {
+    public GCUser(int userId, String userAccount, String userPassword, int userGroup, String userNickName, String userName, String userSignature, int userAge, int userGrade, String userDepartment, String userPhone, String userIconUrl) {
         this.userId = userId;
         this.userAccount = userAccount;
         this.userPassword = userPassword;
         this.userGroup = userGroup;
         this.userNickName = userNickName;
         this.userName = userName;
+        this.userSignature = userSignature;
         this.userAge = userAge;
         this.userGrade = userGrade;
         this.userDepartment = userDepartment;
@@ -117,11 +119,11 @@ public class GCUser extends DataSupport {
         this.userDepartment = userDepartment;
     }
 
-    public long getUserPhone() {
+    public String getUserPhone() {
         return userPhone;
     }
 
-    public void setUserPhone(long userPhone) {
+    public void setUserPhone(String userPhone) {
         this.userPhone = userPhone;
     }
 
@@ -131,6 +133,14 @@ public class GCUser extends DataSupport {
 
     public void setUserIconUrl(String userIconUrl) {
         this.userIconUrl = userIconUrl;
+    }
+
+    public String getUserSignature() {
+        return userSignature;
+    }
+
+    public void setUserSignature(String userSignature) {
+        this.userSignature = userSignature;
     }
 
     @Override
@@ -144,7 +154,6 @@ public class GCUser extends DataSupport {
         if (userGroup != gcUser.userGroup) return false;
         if (userAge != gcUser.userAge) return false;
         if (userGrade != gcUser.userGrade) return false;
-        if (userPhone != gcUser.userPhone) return false;
         if (userAccount != null ? !userAccount.equals(gcUser.userAccount) : gcUser.userAccount != null)
             return false;
         if (userPassword != null ? !userPassword.equals(gcUser.userPassword) : gcUser.userPassword != null)
@@ -153,7 +162,11 @@ public class GCUser extends DataSupport {
             return false;
         if (userName != null ? !userName.equals(gcUser.userName) : gcUser.userName != null)
             return false;
+        if (userSignature != null ? !userSignature.equals(gcUser.userSignature) : gcUser.userSignature != null)
+            return false;
         if (userDepartment != null ? !userDepartment.equals(gcUser.userDepartment) : gcUser.userDepartment != null)
+            return false;
+        if (userPhone != null ? !userPhone.equals(gcUser.userPhone) : gcUser.userPhone != null)
             return false;
         return userIconUrl != null ? userIconUrl.equals(gcUser.userIconUrl) : gcUser.userIconUrl == null;
 
@@ -167,10 +180,11 @@ public class GCUser extends DataSupport {
         result = 31 * result + userGroup;
         result = 31 * result + (userNickName != null ? userNickName.hashCode() : 0);
         result = 31 * result + (userName != null ? userName.hashCode() : 0);
+        result = 31 * result + (userSignature != null ? userSignature.hashCode() : 0);
         result = 31 * result + userAge;
         result = 31 * result + userGrade;
         result = 31 * result + (userDepartment != null ? userDepartment.hashCode() : 0);
-        result = 31 * result + (int) (userPhone ^ (userPhone >>> 32));
+        result = 31 * result + (userPhone != null ? userPhone.hashCode() : 0);
         result = 31 * result + (userIconUrl != null ? userIconUrl.hashCode() : 0);
         return result;
     }
@@ -184,12 +198,12 @@ public class GCUser extends DataSupport {
                 ", userGroup=" + userGroup +
                 ", userNickName='" + userNickName + '\'' +
                 ", userName='" + userName + '\'' +
+                ", userSignature='" + userSignature + '\'' +
                 ", userAge=" + userAge +
                 ", userGrade=" + userGrade +
                 ", userDepartment='" + userDepartment + '\'' +
-                ", userPhone=" + userPhone +
+                ", userPhone='" + userPhone + '\'' +
                 ", userIconUrl='" + userIconUrl + '\'' +
                 '}';
     }
-
 }
