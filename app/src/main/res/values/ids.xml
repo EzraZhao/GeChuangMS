@@ -29,4 +29,41 @@
     <item name="dynamic_recycle_view" type="id" />
     <item name="iv_message_image" type="id" />
     <item name="tv_message_title" type="id" />
+
+    <!--activity_message-->
+    <item name="wv_message_web_view" type="id" />
+    <item name="tv_activity_message_title" type="id" />
+    <item name="iv_activity_message_image" type="id" />
+    <item name="tv_activity_message_content" type="id" />
+
+    <!--activity_login-->
+    <item name="ed_login_user_account" type="id" />
+    <item name="ed_login_user_password" type="id" />
+    <item name="bt_sign_in" type="id" />
+    <item name="bt_sign_up" type="id" />
+    <item name="bt_forget_password" type="id" />
+    <item name="iv_login_logo" type="id" />
+    <item name="iv_login_user_icon" type="id" />
+    <item name="iv_login_user_password" type="id" />
+    <item name="ll_user_account" type="id" />
+    <item name="ll_user_password" type="id" />
+
+    <!--activity_register-->
+    <item name="rl_register_header" type="id" />
+    <item name="iv_register_header_bg" type="id" />
+    <item name="ic_default_user_image" type="id" />
+    <item name="bt_register_user_icon_ed" type="id" />
+    <item name="ed_register_account" type="id" />
+    <item name="ed_register_password" type="id" />
+    <item name="ed_register_name" type="id" />
+    <item name="ed_register_phone" type="id" />
+    <item name="ed_register_department" type="id" />
+    <item name="ll_checkbox" type="id" />
+    <item name="cb_is_member" type="id" />
+    <item name="cb_is_officer" type="id" />
+    <item name="bt_register_sign_up" type="id" />
+    <item name="bt_already_hava_account" type="id" />
+
+
+
 </resources>

@@ -7,8 +7,14 @@ import android.util.Log;
 
 import com.gechuangms.R;
 import com.gechuangms.adapter.DynamicMessageAdapter;
+import com.gechuangms.app.Config;
+import com.gechuangms.model.GCMessage;
 import com.gechuangms.presenter.impl.DynamicPresentImpl;
+import com.gechuangms.ui.activity.MessageActivity;
 import com.gechuangms.view.IDynamicView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -27,22 +33,34 @@ public class CommunityDynamicFragment extends BaseFragment implements IDynamicVi
 
     private DynamicMessageAdapter mDynamicMessageAdapter;
     private DynamicPresentImpl mDynamicPresent;
+    private List<GCMessage> mGcMessageList = new ArrayList<>();
 
     @Override
     protected void init() {
         super.init();
         Log.i(TAG, "init");
         mDynamicPresent = new DynamicPresentImpl(this);
+
+        //获取消息
+        mGcMessageList = mDynamicPresent.getMessages();
+
+        initRecyclerView();
+
+
         //下拉刷新
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
         mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
+    }
 
+    private void initRecyclerView() {
         //设置消息适配器
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
         mRecyclerView.setLayoutManager(layoutManager);
         mDynamicMessageAdapter = new DynamicMessageAdapter(mGcMessageList);
+        mDynamicMessageAdapter.setOnItemClickListener(mOnItemClickListener);
         mRecyclerView.setAdapter(mDynamicMessageAdapter);
     }
+
 
     @Override
     protected int getLayoutRes() {
@@ -60,6 +78,14 @@ public class CommunityDynamicFragment extends BaseFragment implements IDynamicVi
         public void onRefresh() {
             mDynamicPresent.refreshMessage();
             mSwipeRefreshLayout.setRefreshing(false);
+        }
+    };
+
+
+    private DynamicMessageAdapter.OnItemClickListener mOnItemClickListener = new DynamicMessageAdapter.OnItemClickListener() {
+        @Override
+        public void onItemClick(String messageTitle) {
+            startActivity(MessageActivity.class, Config.MESSAGE_TITLE, messageTitle);
         }
     };
 }

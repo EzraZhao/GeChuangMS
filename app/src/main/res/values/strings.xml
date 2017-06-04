@@ -1,27 +1,44 @@
 <resources>
     <string name="app_name">GeChuangMS</string>
 
+    <!--bootombar-->
     <string name="dynamic">dynamic</string>
     <string name="contacts">contacts</string>
     <string name="related">related</string>
-
+    <!--apply for right-->
     <string name="must_acept_all_permission_can_use_app">must acept all permission can use app</string>
     <string name="some_errors_happend">some errors happend</string>
-
+    <!--toolbar-->
     <string name="toolbar_dosomething_like_add">dosomething</string>
     <string name="toolbar_doback">doback</string>
     <string name="toolbar_title_message">title</string>
-
+    <!--navigation-->
     <string name="str_nav_brief_introduction">biref introduction</string>
     <string name="str_nav_elegant_demeanour">elegant demeanour</string>
     <string name="str_nav_about_us">about us</string>
     <string name="str_nav_new_blood">new blood</string>
-
+    <!--underdevelopment-->
     <string name="str_tips">please wait...</string>
-
+    <!--user info-->
     <string name="str_header_signature">Jack of all trades and master of none.</string>
-
+    <!--progress-->
     <string name="load_message_success">load message success</string>
+    <string name="load_messages">load messages</string>
+    <string name="sign_in">sign in</string>
+    <string name="sign_in_faild">sign in failed, please try later</string>
+    <string name="user_account_error">user account error, please check again</string>
+    <string name="user_password_error">user password error, plaase check again</string>
+    <string name="user_exits">user exits</string>
+    <string name="sign_up">sign up</string>
+
+    <!--edit hint-->
+    <string name="student_id_hint">Student ID</string>
+    <string name="password_hint">Password</string>
+    <string name="name_hint">Name</string>
+    <string name="phone_hint">Phone</string>
+    <string name="department_hint">Department</string>
+    <string name="member">Member</string>
+    <string name="officer">Officer</string>
 
 
 </resources>

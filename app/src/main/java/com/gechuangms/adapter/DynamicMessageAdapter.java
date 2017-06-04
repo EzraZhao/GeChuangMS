@@ -29,6 +29,7 @@ public class DynamicMessageAdapter extends RecyclerView.Adapter<DynamicMessageAd
 
     private Context mContext;
     protected List<GCMessage> mGcMessageList;
+    private OnItemClickListener mOnItemClickListener;
 
     public DynamicMessageAdapter(List<GCMessage> mGcMessageList) {
         Log.i(TAG, "DynamicMessageAdapter");
@@ -47,9 +48,18 @@ public class DynamicMessageAdapter extends RecyclerView.Adapter<DynamicMessageAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Log.i(TAG, "onBindViewHolder");
-        GCMessage gcMessage = mGcMessageList.get(position);
+        final GCMessage gcMessage = mGcMessageList.get(position);
         holder.mMessageTitle.setText(gcMessage.getMessageTitle());
         Glide.with(mContext).load(gcMessage.getMessageImageId()).into(holder.mMessageImage);
+        //cardview点击事件
+        holder.mCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mOnItemClickListener != null) {
+                    mOnItemClickListener.onItemClick(gcMessage.getMessageTitle());
+                }
+            }
+        });
     }
 
     @Override
@@ -73,5 +83,12 @@ public class DynamicMessageAdapter extends RecyclerView.Adapter<DynamicMessageAd
         }
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(String messageTitle);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener l) {
+        mOnItemClickListener = l;
+    }
 
 }

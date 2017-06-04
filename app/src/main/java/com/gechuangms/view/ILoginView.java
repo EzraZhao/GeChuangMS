@@ -6,7 +6,7 @@ package com.gechuangms.view;
 
 public interface ILoginView {
 
-    public static final String TAG = "ILoginView";
+    String TAG = "ILoginView";
 
     void onLoginSuccess();
 

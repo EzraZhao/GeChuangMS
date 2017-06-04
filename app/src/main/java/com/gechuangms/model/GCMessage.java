@@ -8,7 +8,6 @@ import org.litepal.crud.DataSupport;
 
 public class GCMessage extends DataSupport {
 
-    private int messageId;
     private String messageTitle;
     private String messageContent;
     private int messageImageId;
@@ -20,14 +19,6 @@ public class GCMessage extends DataSupport {
         this.messageTitle = messageTitle;
         this.messageContent = messageContent;
         this.messageImageId = messageImageId;
-    }
-
-    public int getMessageId() {
-        return messageId;
-    }
-
-    public void setMessageId(int messageId) {
-        this.messageId = messageId;
     }
 
     public String getMessageTitle() {
@@ -61,7 +52,6 @@ public class GCMessage extends DataSupport {
 
         GCMessage gcMessage = (GCMessage) o;
 
-        if (messageId != gcMessage.messageId) return false;
         if (messageImageId != gcMessage.messageImageId) return false;
         if (messageTitle != null ? !messageTitle.equals(gcMessage.messageTitle) : gcMessage.messageTitle != null)
             return false;
@@ -71,8 +61,7 @@ public class GCMessage extends DataSupport {
 
     @Override
     public int hashCode() {
-        int result = messageId;
-        result = 31 * result + (messageTitle != null ? messageTitle.hashCode() : 0);
+        int result = messageTitle != null ? messageTitle.hashCode() : 0;
         result = 31 * result + (messageContent != null ? messageContent.hashCode() : 0);
         result = 31 * result + messageImageId;
         return result;
@@ -81,8 +70,7 @@ public class GCMessage extends DataSupport {
     @Override
     public String toString() {
         return "GCMessage{" +
-                "messageId=" + messageId +
-                ", messageTitle='" + messageTitle + '\'' +
+                "messageTitle='" + messageTitle + '\'' +
                 ", messageContent='" + messageContent + '\'' +
                 ", messageImageId=" + messageImageId +
                 '}';

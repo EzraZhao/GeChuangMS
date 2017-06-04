@@ -5,5 +5,6 @@
     <version value="1"></version>
     <list>
         <mapping class="com.gechuangms.model.GCUser"></mapping>
+        <mapping class="com.gechuangms.model.GCMessage"></mapping>
     </list>
 </litepal>

@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -32,6 +33,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static final String TAG = "BaseActivity";
 
     private ProgressDialog mProgressDialog;
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -118,6 +120,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    protected void postDelay(Runnable runnable, long millis) {
+        mHandler.postDelayed(runnable, millis);
+    }
+
     private void createDataBase() {
         Connector.getDatabase();
 
@@ -132,7 +138,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         GCUser gcUser9 = new GCUser("2014209012", "123", Config.USER_GROUP_OFFICER, "17862511234");
         GCUser gcUser10 = new GCUser("2014200123", "123", Config.USER_GROUP_MEMBER, "17862511234");
 
-        gcUser1.setUserNickName("Nick");
         gcUser1.setUserSignature("If a thing is worth doing it is worth worth doing well.");
         gcUser1.save();
         gcUser2.save();
