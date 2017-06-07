@@ -7,9 +7,14 @@
     <item name="bottomBar" type="id" />
     <item name="nav_view" type="id" />
 
-    <item name="toobar_back" type="id" />
-    <item name="toobar_title" type="id" />
-    <item name="toobar_something" type="id" />
+    <!--toolbar-->
+    <item name="toolbar_something" type="id" />
+
+    <!--title_header-->
+    <item name="bt_back" type="id" />
+    <item name="tv_title" type="id" />
+    <item name="bt_more" type="id" />
+
 
     <!--nav_menu-->
     <item name="nav_brief_introduction" type="id"/>

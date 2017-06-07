@@ -9,4 +9,5 @@ public interface ISplashView {
     void onNotLogin();
 
     void onLoggedIn();
+
 }

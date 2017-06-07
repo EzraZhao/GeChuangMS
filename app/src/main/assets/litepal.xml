@@ -6,5 +6,7 @@
     <list>
         <mapping class="com.gechuangms.model.GCUser"></mapping>
         <mapping class="com.gechuangms.model.GCMessage"></mapping>
+        <mapping class="com.gechuangms.model.GCUser"></mapping>
+        <mapping class="com.gechuangms.model.GCMine"></mapping>
     </list>
 </litepal>

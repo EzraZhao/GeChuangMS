@@ -7,4 +7,6 @@ package com.gechuangms.presenter;
 public interface ISplashPresent {
 
     void checkLoginStatus();
+
+    void requestPermissions();
 }

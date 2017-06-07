@@ -1,78 +1,58 @@
 package com.gechuangms.model;
 
-import org.litepal.crud.DataSupport;
+import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobRelation;
 
 /**
+ * 相关活动推送
  * Created by Ezra on 2017/5/31.
  */
 
-public class GCMessage extends DataSupport {
+public class GCMessage extends BmobObject {
 
-    private String messageTitle;
-    private String messageContent;
-    private int messageImageId;
+    private String title;
+    private String content;
+    private String imageUrl;
+    private Integer group;
+    private BmobRelation comment;
 
-    public GCMessage() {
+    public String getTitle() {
+        return title;
     }
 
-    public GCMessage(String messageTitle, String messageContent, int messageImageId) {
-        this.messageTitle = messageTitle;
-        this.messageContent = messageContent;
-        this.messageImageId = messageImageId;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getMessageTitle() {
-        return messageTitle;
+    public String getContent() {
+        return content;
     }
 
-    public void setMessageTitle(String messageTitle) {
-        this.messageTitle = messageTitle;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public String getMessageContent() {
-        return messageContent;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setMessageContent(String messageContent) {
-        this.messageContent = messageContent;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public int getMessageImageId() {
-        return messageImageId;
+    public int getGroup() {
+        return group;
     }
 
-    public void setMessageImageId(int messageImageId) {
-        this.messageImageId = messageImageId;
+    public void setGroup(int group) {
+        this.group = group;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        GCMessage gcMessage = (GCMessage) o;
-
-        if (messageImageId != gcMessage.messageImageId) return false;
-        if (messageTitle != null ? !messageTitle.equals(gcMessage.messageTitle) : gcMessage.messageTitle != null)
-            return false;
-        return messageContent != null ? messageContent.equals(gcMessage.messageContent) : gcMessage.messageContent == null;
-
+    public BmobRelation getComment() {
+        return comment;
     }
 
-    @Override
-    public int hashCode() {
-        int result = messageTitle != null ? messageTitle.hashCode() : 0;
-        result = 31 * result + (messageContent != null ? messageContent.hashCode() : 0);
-        result = 31 * result + messageImageId;
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "GCMessage{" +
-                "messageTitle='" + messageTitle + '\'' +
-                ", messageContent='" + messageContent + '\'' +
-                ", messageImageId=" + messageImageId +
-                '}';
+    public void setComment(BmobRelation comment) {
+        this.comment = comment;
     }
 }

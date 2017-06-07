@@ -1,5 +1,6 @@
 package com.gechuangms.presenter.impl;
 
+import com.gechuangms.app.Config;
 import com.gechuangms.model.GCUser;
 import com.gechuangms.presenter.IRegisterPresent;
 import com.gechuangms.util.StringUtils;
@@ -8,6 +9,9 @@ import com.gechuangms.view.IRegisterView;
 import org.litepal.crud.DataSupport;
 
 import java.util.List;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Created by Ezra on 2017/6/4.
@@ -38,21 +42,27 @@ public class RegisterPresentImpl implements IRegisterPresent {
     }
 
     private void startRegister(String account, String password, String name, String phone, String department, int group, int iconId) {
-        List<GCUser> gcUsers = DataSupport.findAll(GCUser.class);
-        boolean flag = true;
-        for (GCUser gcUser : gcUsers) {
-            if (account == gcUser.getUserAccount()) {
-                mIRegisterView.onUserExits();
-                flag = false;
-                break;
+        GCUser gcUser = new GCUser();
+        gcUser.setUsername(account);
+        gcUser.setPassword(password);
+        gcUser.setName(name);
+        gcUser.setMobilePhoneNumber(phone);
+        gcUser.setDepartment(department);
+        gcUser.setGroup(group);
+        gcUser.setGrade(getUserGrade(account));
+        gcUser.setIconUrl(Config.DEFAULT_ICON_URL);
+        gcUser.signUp(new SaveListener<GCUser>() {
+            @Override
+            public void done(GCUser gcUser, BmobException e) {
+                if (e == null) {
+                    Config.CURRENT_USER = gcUser;
+                    mIRegisterView.onRegisterSuccess();
+                } else {
+                    mIRegisterView.onRegisterFail(e);
+                }
             }
-        }
-        if (flag) {
-            int grade = getUserGrade(account);
-            GCUser gcUser = new GCUser(account, password, group, name, "", grade, department, phone, iconId);
-            gcUser.save();
-            mIRegisterView.onRegisterSuccess();
-        }
+        });
+
     }
 
     private int getUserGrade(String account) {

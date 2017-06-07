@@ -39,6 +39,10 @@
     <string name="department_hint">Department</string>
     <string name="member">Member</string>
     <string name="officer">Officer</string>
+    <string name="message">message</string>
+    <string name="updata_version_error">updata version error</string>
+    <string name="upload_version_error">upload version error</string>
+    <string name="useless">sorry, it\'s useless</string>
 
 
 </resources>

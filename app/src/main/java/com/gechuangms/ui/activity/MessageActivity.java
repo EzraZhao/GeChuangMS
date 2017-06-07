@@ -1,7 +1,12 @@
 package com.gechuangms.ui.activity;
 
 import android.content.Intent;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +17,7 @@ import com.gechuangms.presenter.impl.MessagePresentImpl;
 import com.gechuangms.view.IMessageView;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by Ezra on 2017/6/3.
@@ -21,7 +27,7 @@ public class MessageActivity extends BaseActivity implements IMessageView {
 
     private static final String TAG = "MessageActivity";
 
-    //    @BindView(R.id.wv_message_web_view)
+//    @BindView(R.id.wv_message_web_view)
 //    WebView mWebView;
     @BindView(R.id.tv_activity_message_title)
     TextView mTvMessageTitle;
@@ -29,8 +35,15 @@ public class MessageActivity extends BaseActivity implements IMessageView {
     ImageView mImMessageImage;
     @BindView(R.id.tv_activity_message_content)
     TextView mTvMessageContent;
+    @BindView(R.id.bt_back)
+    Button mBtBcak;
+    @BindView(R.id.bt_more)
+    Button mBtMore;
+
 
     private MessagePresentImpl mMessagePresentImpl;
+    private GCMessage mGCMessage;
+
 
     @Override
     public int getLayoutRes() {
@@ -50,7 +63,6 @@ public class MessageActivity extends BaseActivity implements IMessageView {
         mMessagePresentImpl.loadMessage(messageTitle);
 
 
-
 //        mWebView.getSettings().setJavaScriptEnabled(true);
 //        mWebView.setWebViewClient(new WebViewClient());
 //        mWebView.loadUrl("http://www.baidu.com");
@@ -58,9 +70,20 @@ public class MessageActivity extends BaseActivity implements IMessageView {
 
     @Override
     public void onLoadMessage(GCMessage gcMessage) {
-        mTvMessageTitle.setText(gcMessage.getMessageTitle());
-        mImMessageImage.setImageResource(gcMessage.getMessageImageId());
-        mTvMessageContent.setText(gcMessage.getMessageContent());
+        // TODO: 2017/6/7
         hideProgress();
     }
+
+    @OnClick({R.id.bt_back, R.id.bt_more})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.bt_back:
+                finish();
+                break;
+            case R.id.bt_more:
+                mMessagePresentImpl.joinActivity(mGCMessage);
+                break;
+        }
+    }
 }
+

@@ -30,16 +30,7 @@ public class MessagePresentImpl implements IMessagePresent {
         ThreadUtils.runOnBackgroundThread(new Runnable() {
             @Override
             public void run() {
-                Cursor cursor = DataSupport.findBySQL("select * from gcmessage where messagetitle='" + messageTitle + "'");
-                if (cursor.moveToFirst()) {
-                    String title = cursor.getString(cursor.getColumnIndex("messagetitle"));
-                    int imageId = cursor.getInt(cursor.getColumnIndex("messageimageid"));
-                    String content = cursor.getString(cursor.getColumnIndex("messagecontent"));
-                    mGcMessage.setMessageTitle(title);
-                    mGcMessage.setMessageImageId(imageId);
-                    mGcMessage.setMessageContent(content);
-                } while (cursor.moveToNext());
-                Log.i(TAG, mGcMessage.getMessageTitle());
+                mGcMessage = findMessageByTitle(messageTitle);
             }
         });
         ThreadUtils.runOnUiThread(new Runnable() {
@@ -48,5 +39,26 @@ public class MessagePresentImpl implements IMessagePresent {
                 mIMessageView.onLoadMessage(mGcMessage);
             }
         });
+    }
+
+    @Override
+    public void joinActivity(GCMessage message) {
+
+    }
+
+    private GCMessage findMessageByTitle(String messageTitle) {
+        Cursor cursor = DataSupport.findBySQL("select * from gcmessage where messagetitle='" + messageTitle + "'");
+        GCMessage message = new GCMessage();
+        if (cursor.moveToFirst()) {
+            String title = cursor.getString(cursor.getColumnIndex("messagetitle"));
+            int imageId = cursor.getInt(cursor.getColumnIndex("messageimageid"));
+            String content = cursor.getString(cursor.getColumnIndex("messagecontent"));
+            message.setMessageTitle(title);
+            message.setMessageImageId(imageId);
+            message.setMessageContent(content);
+        }
+        while (cursor.moveToNext());
+        Log.i(TAG, message.getMessageTitle());
+        return message;
     }
 }

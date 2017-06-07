@@ -13,6 +13,7 @@ import com.gechuangms.view.IRegisterView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.bmob.v3.exception.BmobException;
 
 /**
  * Created by Ezra on 2017/5/29.
@@ -57,9 +58,10 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     }
 
     @OnClick({R.id.bt_register_user_icon_ed, R.id.bt_register_sign_up, R.id.bt_already_hava_account})
-    private void onClick(View view) {
+    public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_register_user_icon_ed:
+                toast(getString(R.string.useless));
                 break;
             case R.id.bt_sign_up:
                 onStartRegister();
@@ -101,6 +103,12 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     public void onStartRegister() {
         showProgress(getResources().getString(R.string.sign_up));
         register();
+    }
+
+    @Override
+    public void onRegisterFail(BmobException e) {
+        hideProgress();
+        toast(e.toString());
     }
 
     private void register() {

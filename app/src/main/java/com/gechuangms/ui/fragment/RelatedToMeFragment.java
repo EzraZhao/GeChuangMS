@@ -1,6 +1,7 @@
 package com.gechuangms.ui.fragment;
 
 import com.gechuangms.R;
+import com.gechuangms.presenter.impl.RelatedPresentImpl;
 import com.gechuangms.view.IRelatedView;
 
 /**
@@ -11,9 +12,12 @@ public class RelatedToMeFragment extends BaseFragment implements IRelatedView {
 
     private static final String TAG = "RelatedToMeFragment";
 
+    private RelatedPresentImpl mRelatedPresent;
+
     @Override
     protected void init() {
         super.init();
+        mRelatedPresent = new RelatedPresentImpl(this);
     }
 
     @Override
