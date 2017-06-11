@@ -1,6 +1,6 @@
 package com.gechuangms.view;
 
-import com.gechuangms.model.GCMessage;
+import cn.bmob.v3.exception.BmobException;
 
 /**
  * Created by Ezra on 2017/6/3.
@@ -8,5 +8,7 @@ import com.gechuangms.model.GCMessage;
 
 public interface IMessageView {
 
-    void onLoadMessage(GCMessage gcMessage);
+    void onJoinSuccess();
+
+    void onJoinFail(BmobException e);
 }

@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.gechuangms.app.Config;
 
+import java.io.Serializable;
+
 import butterknife.ButterKnife;
 import cn.bmob.v3.Bmob;
 
@@ -51,6 +53,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    protected void startActivity(Class activity, String key, Serializable s) {
+        Intent intent = new Intent(this, activity);
+        intent.putExtra(key, s);
+        startActivity(intent);
+    }
+
     protected void showProgress(String msg) {
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this);
@@ -67,6 +75,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void toast(String msg) {
+        if (msg == null) {
+            return;
+        }
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 

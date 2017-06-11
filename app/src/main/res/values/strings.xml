@@ -22,14 +22,18 @@
     <!--user info-->
     <string name="str_header_signature">Jack of all trades and master of none.</string>
     <!--progress-->
-    <string name="load_message_success">load message success</string>
-    <string name="load_messages">load messages</string>
+    <string name="load_success">load success</string>
+    <string name="load">load...</string>
     <string name="sign_in">sign in</string>
     <string name="sign_in_faild">sign in failed, please try later</string>
     <string name="user_account_error">user account error, please check again</string>
     <string name="user_password_error">user password error, plaase check again</string>
     <string name="user_exits">user exits</string>
     <string name="sign_up">sign up</string>
+    <string name="message">message</string>
+    <string name="updata_version_error">updata version error</string>
+    <string name="upload_version_error">upload version error</string>
+    <string name="useless">sorry, it\'s useless</string>
 
     <!--edit hint-->
     <string name="student_id_hint">Student ID</string>
@@ -39,10 +43,14 @@
     <string name="department_hint">Department</string>
     <string name="member">Member</string>
     <string name="officer">Officer</string>
-    <string name="message">message</string>
-    <string name="updata_version_error">updata version error</string>
-    <string name="upload_version_error">upload version error</string>
-    <string name="useless">sorry, it\'s useless</string>
+
+
+    <!--activity introduction-->
+    <string name="gc_introduction_liaocheng">LiaoCheng University</string>
+    <string name="gc_introduction_gechuang">GeChuang</string>
+    <string name="gc_introduction_computer">Computer Society</string>
+    <string name="join_activity_success">join activity success</string>
+    <string name="join_tips">cann\'t join</string>
 
 
 </resources>

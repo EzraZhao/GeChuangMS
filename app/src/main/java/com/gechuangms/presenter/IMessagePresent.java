@@ -8,7 +8,5 @@ import com.gechuangms.model.GCMessage;
 
 public interface IMessagePresent {
 
-    void loadMessage(String messageTitle);
-
     void joinActivity(GCMessage message);
 }

@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".ui.activity.SplashActivity"
             android:label="GeChuang"><!--修改标题栏上显示的文字内容-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,11 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.LoginActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.LoginActivity"/>
         <activity android:name=".ui.activity.RegisterActivity" />
         <activity android:name=".ui.activity.MessageActivity" />
         <activity android:name=".ui.activity.ForgetPasswordActivity" />
-        <activity android:name=".ui.activity.SplashActivity"/>
+        <activity android:name=".ui.activity.IntroductionActivity"/>
+        <activity android:name=".ui.activity.PrizeActivity"/>
+        <activity android:name=".ui.activity.PrizeItemActivity"/>
+        <activity android:name=".ui.activity.AboutUsActivity"/>
+        <activity android:name=".ui.activity.NewBloodActivity"/>
 
     </application>
 

@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="gc_blue">#00acff</color>
+    <color name="sky_blue">#134695</color>
 
     <color name="nav_header_tv_user_name">#FFF</color>
 </resources>

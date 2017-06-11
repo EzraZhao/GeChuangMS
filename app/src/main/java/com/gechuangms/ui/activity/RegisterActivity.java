@@ -1,5 +1,6 @@
 package com.gechuangms.ui.activity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 
 import com.gechuangms.R;
 import com.gechuangms.app.Config;
+import com.gechuangms.presenter.IRegisterPresent;
 import com.gechuangms.presenter.impl.RegisterPresentImpl;
 import com.gechuangms.view.IRegisterView;
 
@@ -41,13 +43,13 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     CheckBox mCbIsOfficer;
 
 
-    private RegisterPresentImpl mRegisterPresentImpl;
+    private IRegisterPresent mIRegisterPresent;
     private int mGroup;
 
     @Override
     protected void init() {
         super.init();
-        mRegisterPresentImpl = new RegisterPresentImpl(this);
+        mIRegisterPresent = new RegisterPresentImpl(this);
         mCbIsMember.setOnCheckedChangeListener(mOnMemberCheckedChangeListener);
         mCbIsOfficer.setOnCheckedChangeListener(mOnOfficerCheckedChangeListener);
     }
@@ -63,8 +65,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
             case R.id.bt_register_user_icon_ed:
                 toast(getString(R.string.useless));
                 break;
-            case R.id.bt_sign_up:
-                onStartRegister();
+            case R.id.bt_register_sign_up:
+                register();
                 break;
             case R.id.bt_already_hava_account:
                 startActivity(LoginActivity.class);
@@ -96,29 +98,29 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     @Override
     public void onRegisterSuccess() {
         hideProgress();
-        startActivity(LoginActivity.class);
+        startActivity(MainActivity.class);
     }
 
     @Override
     public void onStartRegister() {
         showProgress(getResources().getString(R.string.sign_up));
-        register();
     }
 
     @Override
     public void onRegisterFail(BmobException e) {
         hideProgress();
-        toast(e.toString());
+        toast(e.getMessage());
     }
 
     private void register() {
+        Log.i(TAG, "register: ");
         String account = mUserAccount.getText().toString().trim();
         String password = mUserPassword.getText().toString().trim();
         String name = mUserName.getText().toString().trim();
         String phone = mUserPhone.getText().toString().trim();
         String department = mUserDepartment.getText().toString();
         int iconId = mUserDefaultImage.getId();
-        mRegisterPresentImpl.register(account, password, name, phone, department, mGroup, iconId);
+        mIRegisterPresent.register(account, password, name, phone, department, mGroup, iconId);
     }
 
     private CompoundButton.OnCheckedChangeListener mOnMemberCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {

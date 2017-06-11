@@ -11,7 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by Ezra on 2017/5/29.
@@ -22,12 +25,14 @@ public abstract class BaseFragment extends Fragment {
     public static final String TAG = "BaseFragment";
 
     private ProgressDialog mProgressDialog;
+    private Unbinder unbinder;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(getLayoutRes(), null);
-        ButterKnife.bind(this, root);
+        unbinder = ButterKnife.bind(this, root);
         init();
         return root;
     }
@@ -67,6 +72,12 @@ public abstract class BaseFragment extends Fragment {
         startActivity(intent);
     }
 
+    protected void startActivity(Class activity, String key, Serializable s) {
+        Intent intent = new Intent(getContext(), activity);
+        intent.putExtra(key, s);
+        startActivity(intent);
+    }
+
     protected void startActivity(Class activity, boolean finish) {
         Intent intent = new Intent(getContext(), activity);
         startActivity(intent);
@@ -83,6 +94,9 @@ public abstract class BaseFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         mProgressDialog = null;
+        if (unbinder != null) {
+            unbinder.unbind();
+        }
     }
 
 }

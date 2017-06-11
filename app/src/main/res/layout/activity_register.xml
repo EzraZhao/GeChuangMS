@@ -13,8 +13,8 @@
             android:id="@+id/iv_register_header_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ic_register_header_bg" />
-
+            android:background="@color/sky_blue" />
+            <!--android:background="@mipmap/ic_register_header_bg" />-->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ic_default_user_image"
             android:layout_width="90dp"
@@ -54,6 +54,7 @@
         android:layout_alignLeft="@+id/ed_register_account"
         android:layout_alignStart="@+id/ed_register_account"
         android:layout_below="@+id/ed_register_account"
+        android:inputType="textPassword"
         android:hint="@string/password_hint" />
 
 

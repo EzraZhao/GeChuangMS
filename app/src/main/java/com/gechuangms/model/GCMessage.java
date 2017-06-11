@@ -1,5 +1,7 @@
 package com.gechuangms.model;
 
+import java.io.Serializable;
+
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobRelation;
 
@@ -8,12 +10,14 @@ import cn.bmob.v3.datatype.BmobRelation;
  * Created by Ezra on 2017/5/31.
  */
 
-public class GCMessage extends BmobObject {
+public class GCMessage extends BmobObject implements Serializable {
 
     private String title;
     private String content;
     private String imageUrl;
     private Integer group;
+    private String type;
+    private BmobRelation join;
     private BmobRelation comment;
 
     public String getTitle() {
@@ -46,6 +50,22 @@ public class GCMessage extends BmobObject {
 
     public void setGroup(int group) {
         this.group = group;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public BmobRelation getJoin() {
+        return join;
+    }
+
+    public void setJoin(BmobRelation join) {
+        this.join = join;
     }
 
     public BmobRelation getComment() {

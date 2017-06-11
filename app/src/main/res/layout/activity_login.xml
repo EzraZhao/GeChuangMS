@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/ic_login_background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:id="@+id/iv_login_logo"
@@ -53,6 +54,7 @@
             android:id="@+id/ed_login_user_password"
             style="@style/LoginInputStyle"
             android:hint="@string/password_hint"
+            android:inputType="textPassword"
             android:layout_alignEnd="@+id/ll_user_account"
             android:layout_alignRight="@+id/ll_user_account"
             android:layout_below="@+id/ll_user_account"

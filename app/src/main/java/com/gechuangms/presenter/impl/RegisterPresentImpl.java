@@ -1,14 +1,12 @@
 package com.gechuangms.presenter.impl;
 
+import android.util.Log;
+
 import com.gechuangms.app.Config;
 import com.gechuangms.model.GCUser;
 import com.gechuangms.presenter.IRegisterPresent;
 import com.gechuangms.util.StringUtils;
 import com.gechuangms.view.IRegisterView;
-
-import org.litepal.crud.DataSupport;
-
-import java.util.List;
 
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -42,6 +40,7 @@ public class RegisterPresentImpl implements IRegisterPresent {
     }
 
     private void startRegister(String account, String password, String name, String phone, String department, int group, int iconId) {
+        Log.i(TAG, "startRegister: ");
         GCUser gcUser = new GCUser();
         gcUser.setUsername(account);
         gcUser.setPassword(password);
@@ -64,9 +63,8 @@ public class RegisterPresentImpl implements IRegisterPresent {
         });
 
     }
-
     private int getUserGrade(String account) {
-        String grade = account.substring(0, 3);
+        String grade = account.substring(0, 4);
         return Integer.valueOf(grade);
     }
 }

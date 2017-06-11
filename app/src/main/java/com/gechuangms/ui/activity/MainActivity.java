@@ -1,6 +1,5 @@
 package com.gechuangms.ui.activity;
 
-import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -17,7 +16,6 @@ import android.widget.FrameLayout;
 
 import com.gechuangms.R;
 import com.gechuangms.factory.FragmentFactory;
-import com.gechuangms.model.GCMessage;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -31,7 +29,7 @@ public class MainActivity extends BaseActivity {
     BottomBar mBottomBar;
     @BindView(R.id.fragment_container)
     FrameLayout mFragmentContainer;
-    @BindView(R.id.toobar)
+    @BindView(R.id.main_toobar)
     Toolbar mToobar;
     @BindView(R.id.nav_view)
     NavigationView mNavigationView;
@@ -39,12 +37,6 @@ public class MainActivity extends BaseActivity {
     DrawerLayout mDrawerLayout;
 
     private FragmentManager mFragmentManager;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public int getLayoutRes() {
@@ -103,7 +95,21 @@ public class MainActivity extends BaseActivity {
     private class NavigationItemSelectedListener implements NavigationView.OnNavigationItemSelectedListener {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            mDrawerLayout.closeDrawers();
+            switch (item.getItemId()) {
+                case R.id.nav_brief_introduction:
+                    startActivity(IntroductionActivity.class, false);
+                    break;
+                case R.id.nav_elegant_demeanour:
+                    startActivity(PrizeActivity.class, false);
+                    break;
+                case R.id.nav_about_us:
+                    startActivity(AboutUsActivity.class, false);
+                    break;
+                case R.id.nav_new_blood:
+                    startActivity(NewBloodActivity.class, false);
+                    break;
+            }
+
             return false;
         }
     }

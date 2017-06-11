@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import com.gechuangms.R;
 import com.gechuangms.app.Config;
 import com.gechuangms.model.GCMSVersion;
+import com.gechuangms.presenter.ISplashPresent;
 import com.gechuangms.presenter.impl.SplashPresentImpl;
 import com.gechuangms.util.ThreadUtils;
 import com.gechuangms.view.ISplashView;
@@ -18,19 +19,19 @@ public class SplashActivity extends BaseActivity implements ISplashView {
 
     private static final String TAG = "SplashActivity";
 
-    private SplashPresentImpl mSplashPresentImpl;
+    private ISplashPresent mISplashPresent;
 
     @Override
     protected void init() {
         super.init();
-        mSplashPresentImpl = new SplashPresentImpl(SplashActivity.this, this);
+        mISplashPresent = new SplashPresentImpl(SplashActivity.this, this);
         ThreadUtils.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //版本初始化
                 GCMSVersion.versionInit();
                 //权限申请
-                mSplashPresentImpl.requestPermissions();
+                mISplashPresent.requestPermissions();
             }
         });
 

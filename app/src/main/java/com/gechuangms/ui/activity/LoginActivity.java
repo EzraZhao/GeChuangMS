@@ -1,10 +1,12 @@
 package com.gechuangms.ui.activity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.gechuangms.R;
+import com.gechuangms.presenter.ILoginPresent;
 import com.gechuangms.presenter.impl.LoginPresentImpl;
 import com.gechuangms.view.ILoginView;
 
@@ -30,12 +32,12 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     @BindView(R.id.bt_forget_password)
     Button mBtForget;
 
-    private LoginPresentImpl mLoginPresentImpl;
+    private ILoginPresent mILoginPresent;
 
     @Override
     protected void init() {
         super.init();
-        mLoginPresentImpl = new LoginPresentImpl(this);
+        mILoginPresent = new LoginPresentImpl(this);
     }
 
     @OnClick({R.id.bt_sign_in, R.id.bt_sign_up, R.id.bt_forget_password})
@@ -54,9 +56,10 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     }
 
     private void login() {
+        Log.i(TAG, "login: ");
         String userName = mEdUserAccount.getText().toString().trim();
         String passwrod = mEdUserPassword.getText().toString().trim();
-        mLoginPresentImpl.login(userName, passwrod);
+        mILoginPresent.login(userName, passwrod);
     }
 
     @Override

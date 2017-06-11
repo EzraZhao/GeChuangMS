@@ -35,6 +35,10 @@
     <item name="iv_message_image" type="id" />
     <item name="tv_message_title" type="id" />
 
+    <!--fragment_related-->
+    <item name="related_swipe_refresh" type="id" />
+    <item name="related_recycler_view" type="id" />
+
     <!--activity_message-->
     <item name="wv_message_web_view" type="id" />
     <item name="tv_activity_message_title" type="id" />
@@ -69,6 +73,7 @@
     <item name="bt_register_sign_up" type="id" />
     <item name="bt_already_hava_account" type="id" />
 
-
+    <!--activity_introduction-->
+    <item name="tv_activity_introduction_title" type="id" />
 
 </resources>

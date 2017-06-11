@@ -12,13 +12,16 @@
         android:layout_height="match_parent">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toobar"
+            android:id="@+id/main_toobar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-        </android.support.v7.widget.Toolbar>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways|snap"/>
+        <!--scroll表示向上滚动时Toolbar跟着向上滚动并实现隐藏-->
+        <!--enterAlways表示向下滚动时Toolbar跟着向下滚动并重新显示-->
+        <!--snap表示当还没有完全隐藏或显示的时候，会根据当前滚动的距离，自动选择-->
 
         <FrameLayout
             android:id="@+id/fragment_container"
@@ -29,7 +32,7 @@
         <com.roughike.bottombar.BottomBar
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="?attr/actionBarSize"
             app:bb_activeTabColor="@color/gc_blue"
             app:bb_tabXmlResource="@xml/bottombar_tabs" />
 

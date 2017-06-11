@@ -1,5 +1,7 @@
 package com.gechuangms.presenter.impl;
 
+import android.util.Log;
+
 import com.gechuangms.app.Config;
 import com.gechuangms.model.GCUser;
 import com.gechuangms.presenter.ILoginPresent;
@@ -43,6 +45,7 @@ public class LoginPresentImpl implements ILoginPresent {
     }
 
     private void startLogin(String userName, String password) {
+        Log.i(TAG, "startLogin: ");
         GCUser gcUser = new GCUser();
         gcUser.setUsername(userName);
         gcUser.setPassword(password);

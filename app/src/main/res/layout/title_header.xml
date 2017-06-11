@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/gc_blue">
+    android:background="@color/colorPrimary">
 
     <Button
         android:id="@+id/bt_back"

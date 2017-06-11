@@ -7,14 +7,15 @@ import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 
 import com.gechuangms.app.Config;
-import com.gechuangms.model.GCToken;
+import com.gechuangms.model.GCMessage;
+import com.gechuangms.model.GCUser;
 import com.gechuangms.presenter.ISplashPresent;
 import com.gechuangms.view.ISplashView;
 
-import org.litepal.crud.DataSupport;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.bmob.v3.BmobUser;
 
 /**
  * Created by Ezra on 2017/6/4.
@@ -35,8 +36,8 @@ public class SplashPresentImpl implements ISplashPresent {
 
     @Override
     public void checkLoginStatus() {
-        List<GCToken> tokens = DataSupport.findAll(GCToken.class);
-        if (tokens.get(0).isToken()) {
+        BmobUser currentUser = BmobUser.getCurrentUser(GCUser.class);
+        if (currentUser != null) {
             mISplashView.onLoggedIn();
         } else {
             mISplashView.onNotLogin();
