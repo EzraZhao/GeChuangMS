@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="GCMSTheme" parent="AppTheme"></style>
+
     <!--&lt;!&ndash;设置侧滑界面字体&ndash;&gt;-->
     <!--<style name="NavigationViewStyle">-->
         <!--<item name="android:textColor">@android:color/white</item>-->
@@ -17,12 +19,15 @@
     <style name="LoginInputStyle">
         <item name="android:layout_width">240dp</item>
         <item name="android:layout_height">50dp</item>
+        <item name="android:singleLine">true</item>
     </style>
 
     <style name="RegisterInputStyle">
-        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_width">280dp</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_marginTop">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:padding">3dp</item>
     </style>
 
     <style name="Introduction_Title">

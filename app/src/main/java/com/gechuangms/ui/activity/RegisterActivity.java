@@ -1,11 +1,12 @@
 package com.gechuangms.ui.activity;
 
+import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.gechuangms.R;
 import com.gechuangms.app.Config;
@@ -14,6 +15,7 @@ import com.gechuangms.presenter.impl.RegisterPresentImpl;
 import com.gechuangms.view.IRegisterView;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.exception.BmobException;
 
@@ -35,23 +37,20 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     EditText mUserName;
     @BindView(R.id.ed_register_phone)
     EditText mUserPhone;
-    @BindView(R.id.ed_register_department)
-    EditText mUserDepartment;
-    @BindView(R.id.cb_is_member)
-    CheckBox mCbIsMember;
-    @BindView(R.id.cb_is_officer)
-    CheckBox mCbIsOfficer;
-
+//    @BindView(R.id.ed_register_department)
+//    EditText mUserDepartment;
+    @BindView(R.id.rg_group)
+    RadioGroup mRgGroup;
 
     private IRegisterPresent mIRegisterPresent;
-    private int mGroup;
+    private static int mGroup = 1;
 
     @Override
     protected void init() {
         super.init();
         mIRegisterPresent = new RegisterPresentImpl(this);
-        mCbIsMember.setOnCheckedChangeListener(mOnMemberCheckedChangeListener);
-        mCbIsOfficer.setOnCheckedChangeListener(mOnOfficerCheckedChangeListener);
+
+        mRgGroup.setOnCheckedChangeListener(mOnCheckedChangeListener);
     }
 
     @Override
@@ -113,30 +112,33 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     }
 
     private void register() {
-        Log.i(TAG, "register: ");
+
         String account = mUserAccount.getText().toString().trim();
         String password = mUserPassword.getText().toString().trim();
         String name = mUserName.getText().toString().trim();
         String phone = mUserPhone.getText().toString().trim();
-        String department = mUserDepartment.getText().toString();
+//        String department = mUserDepartment.getText().toString();
         int iconId = mUserDefaultImage.getId();
-        mIRegisterPresent.register(account, password, name, phone, department, mGroup, iconId);
+//        mIRegisterPresent.register(account, password, name, phone, department, mGroup, iconId);
+        mIRegisterPresent.register(account, password, name, phone, mGroup, iconId);
     }
 
-    private CompoundButton.OnCheckedChangeListener mOnMemberCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
+    private RadioGroup.OnCheckedChangeListener mOnCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
         @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (isChecked) {
-                mGroup = Config.USER_GROUP_MEMBER;
+        public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+            switch (checkedId) {
+                case R.id.rb_member:
+                    mGroup = Config.USER_GROUP_MEMBER;
+                    Log.i(TAG, "onCheckedChanged: " + checkedId);
+                    Log.i(TAG, "onCheckedChanged: " + mGroup);
+                    break;
+                case R.id.rb_officer:
+                    mGroup = Config.USER_GROUP_OFFICER;
+                    Log.i(TAG, "onCheckedChanged: " + checkedId);
+                    Log.i(TAG, "onCheckedChanged: " + mGroup);
+                    break;
             }
         }
     };
-    private CompoundButton.OnCheckedChangeListener mOnOfficerCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (isChecked) {
-                mGroup = Config.USER_GROUP_OFFICER;
-            }
-        }
-    };
+
 }

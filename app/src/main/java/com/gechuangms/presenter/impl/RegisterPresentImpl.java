@@ -26,11 +26,13 @@ public class RegisterPresentImpl implements IRegisterPresent {
     }
 
     @Override
-    public void register(String account, String password, String name, String phone, String department, int group, int iconId) {
+//    public void register(String account, String password, String name, String phone, String department, int group, int iconId) {
+    public void register(String account, String password, String name, String phone, int group, int iconId) {
         if (StringUtils.checkUserName(account)) {
             if (StringUtils.checkPassword(password)) {
                 mIRegisterView.onStartRegister();
-                startRegister(account, password, name, phone, department, group, iconId);
+//                startRegister(account, password, name, phone, department, group, iconId);
+                startRegister(account, password, name, phone, group, iconId);
             } else {
                 mIRegisterView.onPasswordError();
             }
@@ -39,14 +41,15 @@ public class RegisterPresentImpl implements IRegisterPresent {
         }
     }
 
-    private void startRegister(String account, String password, String name, String phone, String department, int group, int iconId) {
+//    private void startRegister(String account, String password, String name, String phone, String department, int group, int iconId) {
+    private void startRegister(String account, String password, String name, String phone, int group, int iconId) {
         Log.i(TAG, "startRegister: ");
         GCUser gcUser = new GCUser();
         gcUser.setUsername(account);
         gcUser.setPassword(password);
         gcUser.setName(name);
         gcUser.setMobilePhoneNumber(phone);
-        gcUser.setDepartment(department);
+//        gcUser.setDepartment(department);
         gcUser.setGroup(group);
         gcUser.setGrade(getUserGrade(account));
         gcUser.setIconUrl(Config.DEFAULT_ICON_URL);

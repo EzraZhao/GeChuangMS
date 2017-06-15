@@ -9,9 +9,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ui.activity.SplashActivity"
+            android:theme="@style/GCMSTheme"
             android:label="GeChuang"><!--修改标题栏上显示的文字内容-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,15 +20,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.MainActivity" />
-        <activity android:name=".ui.activity.LoginActivity"/>
+        <activity android:name=".ui.activity.LoginActivity"
+            android:theme="@style/GCMSTheme"/>
         <activity android:name=".ui.activity.RegisterActivity" />
         <activity android:name=".ui.activity.MessageActivity" />
         <activity android:name=".ui.activity.ForgetPasswordActivity" />
         <activity android:name=".ui.activity.IntroductionActivity"/>
         <activity android:name=".ui.activity.PrizeActivity"/>
-        <activity android:name=".ui.activity.PrizeItemActivity"/>
+        <activity android:name=".ui.activity.PrizeItemActivity"
+            android:theme="@style/GCMSTheme"/>
         <activity android:name=".ui.activity.AboutUsActivity"/>
         <activity android:name=".ui.activity.NewBloodActivity"/>
+        <activity android:name=".ui.activity.FindPasswordByEmailActivity" />
+        <activity android:name=".ui.activity.FindPasswordByPhoneActivity" />
 
     </application>
 

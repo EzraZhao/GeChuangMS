@@ -2,23 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/ic_login_background"
     android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/rl_register_header"
         android:layout_width="match_parent"
-        android:layout_height="160dp">
+        android:layout_height="150dp">
 
         <ImageView
             android:id="@+id/iv_register_header_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/sky_blue" />
-            <!--android:background="@mipmap/ic_register_header_bg" />-->
+            android:background="@mipmap/ic_register_header_bg" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ic_default_user_image"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_above="@+id/bt_register_user_icon_ed"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -28,8 +29,8 @@
 
         <Button
             android:id="@+id/bt_register_user_icon_ed"
-            android:layout_width="50dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
             android:layout_alignBottom="@+id/iv_register_header_bg"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
@@ -39,94 +40,120 @@
 
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/ed_register_account"
-        style="@style/RegisterInputStyle"
-        android:layout_below="@+id/rl_register_header"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:hint="@string/student_id_hint"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/ed_register_password"
-        style="@style/RegisterInputStyle"
-        android:layout_alignLeft="@+id/ed_register_account"
-        android:layout_alignStart="@+id/ed_register_account"
-        android:layout_below="@+id/ed_register_account"
-        android:inputType="textPassword"
-        android:hint="@string/password_hint" />
-
-
-    <EditText
-        android:id="@+id/ed_register_name"
-        style="@style/RegisterInputStyle"
-        android:layout_alignLeft="@+id/ed_register_password"
-        android:layout_alignStart="@+id/ed_register_password"
-        android:layout_below="@+id/ed_register_password"
-        android:hint="@string/name_hint" />
-
-    <EditText
-        android:id="@+id/ed_register_phone"
-        style="@style/RegisterInputStyle"
-        android:layout_alignLeft="@+id/ed_register_name"
-        android:layout_alignStart="@+id/ed_register_name"
-        android:layout_below="@+id/ed_register_name"
-        android:hint="@string/phone_hint"
-        android:inputType="phone" />
-
-    <EditText
-        android:id="@+id/ed_register_department"
-        style="@style/RegisterInputStyle"
-        android:hint="@string/department_hint"
-        android:layout_below="@+id/ed_register_phone"
-        android:layout_alignLeft="@+id/ed_register_phone"
-        android:layout_alignStart="@+id/ed_register_phone" />
-
     <LinearLayout
-        android:id="@+id/ll_checkbox"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/bt_register_sign_up"
-        android:layout_alignRight="@+id/bt_register_sign_up"
-        android:layout_alignEnd="@+id/bt_register_sign_up">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_ed"
+        android:layout_below="@+id/rl_register_header"
+        android:layout_centerHorizontal="true">
 
-        <TextView
+        <ImageView
+            android:id="@+id/basic_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/member"
-            android:textSize="19sp"
-            android:paddingLeft="10dp"/>
+            android:layout_alignLeft="@+id/bt_register_sign_up"
+            android:layout_alignStart="@+id/bt_register_sign_up"
+            android:layout_below="@+id/rl_register_header"
+            android:layout_marginTop="15dp"
+            android:background="@mipmap/ic_register_basic_info_1" />
 
-        <CheckBox
-            android:id="@+id/cb_is_member"
+        <EditText
+            android:id="@+id/ed_register_account"
+            style="@style/RegisterInputStyle"
+            android:layout_below="@+id/basic_info"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/student_id_hint"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/ed_register_password"
+            style="@style/RegisterInputStyle"
+            android:layout_alignLeft="@+id/ed_register_account"
+            android:layout_alignStart="@+id/ed_register_account"
+            android:layout_below="@+id/ed_register_account"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword" />
+
+        <ImageView
+            android:id="@+id/private_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"/>
+            android:layout_alignLeft="@+id/bt_register_sign_up"
+            android:layout_alignStart="@+id/bt_register_sign_up"
+            android:layout_below="@+id/ed_register_password"
+            android:layout_margin="5dp"
+            android:background="@mipmap/ic_register_private_info_1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/officer"
-            android:textSize="19sp"
-            android:paddingLeft="80dp"/>
+        <EditText
+            android:id="@+id/ed_register_name"
+            style="@style/RegisterInputStyle"
+            android:layout_above="@+id/ed_register_phone"
+            android:layout_alignLeft="@+id/ed_register_password"
+            android:layout_alignStart="@+id/ed_register_password"
+            android:hint="@string/name_hint" />
 
-        <CheckBox
-            android:id="@+id/cb_is_officer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/ed_register_phone"
+            style="@style/RegisterInputStyle"
+            android:layout_above="@+id/rg_group"
+            android:layout_alignLeft="@+id/ed_register_name"
+            android:layout_alignStart="@+id/ed_register_name"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/phone_hint"
+            android:inputType="phone" />
+        <!--android:layout_above="@+id/ed_register_department"-->
 
+        <RadioGroup
+            android:id="@+id/rg_group"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/bt_register_sign_up"
+            android:layout_alignLeft="@+id/ed_register_phone"
+            android:layout_alignStart="@+id/ed_register_phone"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <RadioButton
+                android:id="@+id/rb_member"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/member"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_officer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_weight="1"
+                android:text="@string/officer"
+                android:textSize="18sp" />
+
+        </RadioGroup>
     </LinearLayout>
+
+
+
+    <!--<EditText-->
+    <!--android:id="@+id/ed_register_department"-->
+    <!--style="@style/RegisterInputStyle"-->
+    <!--android:layout_above="@+id/rg_group"-->
+    <!--android:layout_alignLeft="@+id/ed_register_phone"-->
+    <!--android:layout_alignStart="@+id/ed_register_phone"-->
+    <!--android:hint="@string/department_hint" />-->
+
 
     <Button
         android:id="@+id/bt_register_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/ed_register_phone"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/ed_register_phone"
-        android:layout_marginBottom="50dp"
-        android:background="@mipmap/ic_register_sign_up" />
+        android:background="@mipmap/ic_register_sign_up"
+        android:layout_above="@+id/bt_already_hava_account"
+        android:layout_alignRight="@+id/ll_ed"
+        android:layout_alignEnd="@+id/ll_ed" />
 
     <Button
         android:id="@+id/bt_already_hava_account"
@@ -134,7 +161,6 @@
         android:layout_height="35dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
         android:background="@mipmap/ic_register_already_have_account" />
 
 </RelativeLayout>
