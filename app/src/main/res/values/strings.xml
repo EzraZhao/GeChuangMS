@@ -63,10 +63,18 @@
     <string name="updata_password_success">update password success</string>
     <string name="email">Email</string>
     <string name="check_email">please check your email</string>
-    <string name="forget_your_password">Forgot your password</string>
+    <string name="forget_your_password">forgot your password</string>
     <string name="phone_can_no_be_empty">phone can\'t be empty</string>
     <string name="code_or_password_can_no_be_empty">code or password can\'t be empty</string>
     <string name="log_out">log out</string>
+    <string name="age">Age</string>
+    <string name="boy">Boy</string>
+    <string name="girl">Girl</string>
+    <string name="home">Home</string>
+    <string name="signature">Signature</string>
+    <string name="updata_success">updata success</string>
+    <string name="thanks_for_feedback">thanks for your feedback</string>
+    <string name="lou_out">Log out</string>
 
 
 </resources>

@@ -23,6 +23,7 @@
         <activity android:name=".ui.activity.LoginActivity"
             android:theme="@style/GCMSTheme"/>
         <activity android:name=".ui.activity.RegisterActivity" />
+        <activity android:name=".ui.activity.UpdataUserInfoActivity"/>
         <activity android:name=".ui.activity.MessageActivity" />
         <activity android:name=".ui.activity.ForgetPasswordActivity" />
         <activity android:name=".ui.activity.IntroductionActivity"/>

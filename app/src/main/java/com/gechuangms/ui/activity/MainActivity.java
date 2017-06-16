@@ -1,8 +1,6 @@
 package com.gechuangms.ui.activity;
 
 import android.support.annotation.IdRes;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -12,7 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.gechuangms.R;
 import com.gechuangms.factory.FragmentFactory;
@@ -20,8 +21,9 @@ import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
 import butterknife.BindView;
+import cn.bmob.v3.BmobUser;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "MainActivity";
 
@@ -31,10 +33,20 @@ public class MainActivity extends BaseActivity {
     FrameLayout mFragmentContainer;
     @BindView(R.id.main_toobar)
     Toolbar mToobar;
-    @BindView(R.id.nav_view)
-    NavigationView mNavigationView;
     @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
+    @BindView(R.id.main_nav_header)
+    LinearLayout navHeader;
+    @BindView(R.id.nav_brief_introduction)
+    LinearLayout navBriefIntroduction;
+    @BindView(R.id.nav_elegant_demeanour)
+    LinearLayout navElegantDemeanour;
+    @BindView(R.id.nav_about_us)
+    LinearLayout navAboutUs;
+    @BindView(R.id.nav_new_blood)
+    LinearLayout navNewBlood;
+    @BindView(R.id.nav_log_out)
+    Button navLogOut;
 
     private FragmentManager mFragmentManager;
 
@@ -60,9 +72,38 @@ public class MainActivity extends BaseActivity {
             actionBar.setHomeAsUpIndicator(R.mipmap.ic_logo_menu);
         }
 
-        //设置侧滑菜单监听
-        mNavigationView.setCheckedItem(R.id.nav_brief_introduction);
-        mNavigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener());
+        //设置相关控件点击事件
+        navHeader.setOnClickListener(this);
+        navBriefIntroduction.setOnClickListener(this);
+        navElegantDemeanour.setOnClickListener(this);
+        navAboutUs.setOnClickListener(this);
+        navNewBlood.setOnClickListener(this);
+        navLogOut.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.main_nav_header:
+                startActivity(UpdataUserInfoActivity.class,false);
+                break;
+            case R.id.nav_brief_introduction:
+                startActivity(IntroductionActivity.class, false);
+                break;
+            case R.id.nav_elegant_demeanour:
+                startActivity(PrizeActivity.class, false);
+                break;
+            case R.id.nav_about_us:
+                startActivity(AboutUsActivity.class, false);
+                break;
+            case R.id.nav_new_blood:
+                startActivity(NewBloodActivity.class, false);
+                break;
+            case R.id.nav_log_out:
+                BmobUser.logOut();
+                startActivity(LoginActivity.class);
+                break;
+        }
     }
 
     private OnTabSelectListener mOnTabSelectListener = new OnTabSelectListener() {
@@ -92,25 +133,4 @@ public class MainActivity extends BaseActivity {
         return true;
     }
 
-    private class NavigationItemSelectedListener implements NavigationView.OnNavigationItemSelectedListener {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.nav_brief_introduction:
-                    startActivity(IntroductionActivity.class, false);
-                    break;
-                case R.id.nav_elegant_demeanour:
-                    startActivity(PrizeActivity.class, false);
-                    break;
-                case R.id.nav_about_us:
-                    startActivity(AboutUsActivity.class, false);
-                    break;
-                case R.id.nav_new_blood:
-                    startActivity(NewBloodActivity.class, false);
-                    break;
-            }
-
-            return false;
-        }
-    }
 }

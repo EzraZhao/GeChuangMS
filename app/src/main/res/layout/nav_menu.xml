@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/nav_brief_introduction"
+        style="@style/Nav_Layout">
+
+        <ImageView
+            style="@style/Nav_Image"
+            android:src="@mipmap/ic_introduction" />
+
+        <TextView
+            style="@style/Nav_Text"
+            android:text="@string/str_nav_brief_introduction" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_elegant_demeanour"
+        style="@style/Nav_Layout">
+
+        <ImageView
+            style="@style/Nav_Image"
+            android:src="@mipmap/ic_goods" />
+
+        <TextView
+            style="@style/Nav_Text"
+            android:text="@string/str_nav_elegant_demeanour" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_about_us"
+        style="@style/Nav_Layout">
+
+        <ImageView
+            style="@style/Nav_Image"
+            android:src="@mipmap/ic_a" />
+
+        <TextView
+            style="@style/Nav_Text"
+            android:text="@string/str_nav_about_us" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_new_blood"
+        style="@style/Nav_Layout">
+
+        <ImageView
+            style="@style/Nav_Image"
+            android:src="@mipmap/ic_action_group_add" />
+
+        <TextView
+            style="@style/Nav_Text"
+            android:text="@string/str_nav_new_blood" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+        <Button
+            android:id="@+id/nav_log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:text="@string/lou_out"
+            android:textColor="@color/nav_header_tv_user_name"/>
+    </RelativeLayout>
+
+</LinearLayout>

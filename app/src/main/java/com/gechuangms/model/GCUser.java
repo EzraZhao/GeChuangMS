@@ -16,6 +16,9 @@ public class GCUser extends BmobUser {
     private Integer grade;
     private String department;
     private String iconUrl;
+    private Boolean gender;
+    private String home;
+    private String age;
 
     public String getName() {
         return name;
@@ -63,5 +66,29 @@ public class GCUser extends BmobUser {
 
     public void setIconUrl(String iconUrl) {
         this.iconUrl = iconUrl;
+    }
+
+    public Boolean getGender() {
+        return gender;
+    }
+
+    public void setGender(Boolean gender) {
+        this.gender = gender;
+    }
+
+    public String getHome() {
+        return home;
+    }
+
+    public void setHome(String home) {
+        this.home = home;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 }

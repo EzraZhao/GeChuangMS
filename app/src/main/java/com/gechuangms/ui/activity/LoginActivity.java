@@ -47,10 +47,10 @@ public class LoginActivity extends BaseActivity implements ILoginView {
                 login();
                 break;
             case R.id.bt_sign_up:
-                startActivity(RegisterActivity.class);
+                startActivity(RegisterActivity.class, false);
                 break;
             case R.id.bt_forget_password:
-                startActivity(ForgetPasswordActivity.class);
+                startActivity(ForgetPasswordActivity.class, false);
                 break;
         }
     }

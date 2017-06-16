@@ -8,7 +8,7 @@
         android:id="@+id/bt_back"
         android:layout_width="20dp"
         android:layout_height="30dp"
-        android:background="@mipmap/ic_left_back"
+        android:background="@mipmap/ic_back"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
         android:layout_centerVertical="true"
@@ -19,7 +19,7 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:layout_centerInParent="true"
         android:textColor="@color/nav_header_tv_user_name"/>
 
@@ -28,12 +28,11 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="@mipmap/ic_more"
-        android:layout_alignBaseline="@+id/tv_title"
-        android:layout_alignBottom="@+id/tv_title"
+        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="15dp"
         android:layout_marginEnd="15dp"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
 </RelativeLayout>

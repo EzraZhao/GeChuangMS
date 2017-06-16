@@ -4,13 +4,14 @@
     android:layout_height="180dp"
     android:padding="10dp"
     android:background="?attr/colorPrimary"
+    android:clickable="true"
     android:weightSum="1">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ic_user_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@mipmap/yuan"
+        android:src="@mipmap/ic_icon"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="15dp"/>
 
@@ -29,7 +30,7 @@
             android:singleLine="true"
             android:ellipsize="end"
             android:textColor="@color/nav_header_tv_user_name"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/tv_user_signature"
@@ -40,9 +41,9 @@
             android:layout_marginTop="20dp"
             android:text="@string/str_header_signature"
             android:textColor="@color/nav_header_tv_user_name"
-            android:textSize="15sp"
-            android:singleLine="true"
+            android:textSize="12sp"
             android:ellipsize="end"/>
+        <!--android:singleLine="true"-->
     </RelativeLayout>
 
 

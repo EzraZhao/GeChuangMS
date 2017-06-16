@@ -7,6 +7,7 @@
     <include layout="@layout/title_header" />
 
     <EditText
+        android:id="@+id/ed_email"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +15,7 @@
         android:inputType="textEmailAddress"/>
 
     <ImageView
-        android:id="@+id/im_yes"
+        android:id="@+id/iv_yes"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:src="@mipmap/ic_yes"

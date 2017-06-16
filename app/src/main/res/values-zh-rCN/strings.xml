@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">格创管理系统</string>
+
+    <!--bootombar-->
+    <string name="dynamic">动态</string>
+    <string name="contacts">联系人</string>
+    <string name="related">我的</string>
+    <!--apply for right-->
+    <string name="must_acept_all_permission_can_use_app">必须允许所有权限方可使用</string>
+    <string name="some_errors_happend">有一些错误</string>
+    <!--toolbar-->
+    <string name="toolbar_dosomething_like_add">dosomething</string>
+    <string name="toolbar_doback">返回</string>
+    <string name="toolbar_title_message">标题</string>
+    <!--navigation-->
+    <string name="str_nav_brief_introduction">简介</string>
+    <string name="str_nav_elegant_demeanour">风采展示</string>
+    <string name="str_nav_about_us">关于我们</string>
+    <string name="str_nav_new_blood">纳新</string>
+    <!--underdevelopment-->
+    <string name="str_tips">请等待。。。</string>
+    <!--user info-->
+    <string name="str_header_signature">万事皆通，事事不精。</string>
+    <!--progress-->
+    <string name="load_success">加载成功</string>
+    <string name="load">加载中。。。</string>
+    <string name="sign_in">登陆</string>
+    <string name="sign_in_faild">登陆失败，请稍后再试</string>
+    <string name="user_account_error">用户名错误，请再试一次</string>
+    <string name="user_password_error">密码错误，请再试一次</string>
+    <string name="user_exits">用户已存在</string>
+    <string name="sign_up">注册</string>
+    <string name="message">消息</string>
+    <string name="updata_version_error">版本更新失败</string>
+    <string name="upload_version_error">上传版本失败</string>
+    <string name="useless">不好意思，暂时没有用哦</string>
+
+    <!--edit hint-->
+    <string name="student_id_hint">学号</string>
+    <string name="password_hint">密码</string>
+    <string name="name_hint">姓名</string>
+    <string name="phone_hint">手机号</string>
+    <string name="department_hint">学院</string>
+    <string name="member">会员</string>
+    <string name="officer">干事</string>
+
+
+    <!--activity introduction-->
+    <string name="gc_introduction_liaocheng">聊 城 大 学</string>
+    <string name="gc_introduction_gechuang">格 创</string>
+    <string name="gc_introduction_computer">计 算 机 协 会</string>
+    <string name="join_activity_success">加入成功</string>
+    <string name="join_tips">不可加入</string>
+    <string name="tv_gc_logo">格 物 致 知 &#160; &#160; 创 新 不 止</string>
+
+    <!--find password-->
+    <string name="use_email">通过邮箱找回</string>
+    <string name="use_phone">通过手机验证码找回</string>
+    <string name="find_password">找回密码</string>
+    <string name="get_code">获取验证码</string>
+    <string name="code">验证码</string>
+    <string name="new_password_hint">新密码</string>
+    <string name="updata_password_success">修改密码成功</string>
+    <string name="email">邮箱</string>
+    <string name="check_email">请检查邮箱</string>
+    <string name="forget_your_password">忘记密码</string>
+    <string name="phone_can_no_be_empty">手机号不能为空</string>
+    <string name="code_or_password_can_no_be_empty">验证码或密码不可为空</string>
+    <string name="log_out">注销</string>
+    <string name="age">年龄</string>
+    <string name="boy">男</string>
+    <string name="girl">女</string>
+    <string name="home">家乡</string>
+    <string name="signature">签名</string>
+    <string name="updata_success">修改成功</string>
+    <string name="thanks_for_feedback">谢谢您的反馈</string>
+    <string name="lou_out">退出登录</string>
+
+</resources>

@@ -34,13 +34,10 @@ public class MessageActivity extends BaseActivity implements IMessageView {
     ImageView mIvMessageImage;
     @BindView(R.id.tv_activity_message_content)
     TextView mTvMessageContent;
-    @BindView(R.id.bt_back)
-    Button mBtBcak;
     @BindView(R.id.tv_title)
     TextView mTvTitle;
     @BindView(R.id.bt_more)
     Button mBtMore;
-
 
     private IMessagePresent mIMessagePresent;
     private GCMessage mGCMessage;
@@ -57,6 +54,7 @@ public class MessageActivity extends BaseActivity implements IMessageView {
         Log.i(TAG, "init");
 
         mTvTitle.setText(R.string.message);
+        mBtMore.setVisibility(View.VISIBLE);
 
         mIMessagePresent = new MessagePresentImpl(this);
 

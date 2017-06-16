@@ -1,6 +1,5 @@
 package com.gechuangms.ui.activity;
 
-import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +14,6 @@ import com.gechuangms.presenter.impl.RegisterPresentImpl;
 import com.gechuangms.view.IRegisterView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.exception.BmobException;
 
@@ -129,13 +127,9 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
             switch (checkedId) {
                 case R.id.rb_member:
                     mGroup = Config.USER_GROUP_MEMBER;
-                    Log.i(TAG, "onCheckedChanged: " + checkedId);
-                    Log.i(TAG, "onCheckedChanged: " + mGroup);
                     break;
                 case R.id.rb_officer:
                     mGroup = Config.USER_GROUP_OFFICER;
-                    Log.i(TAG, "onCheckedChanged: " + checkedId);
-                    Log.i(TAG, "onCheckedChanged: " + mGroup);
                     break;
             }
         }

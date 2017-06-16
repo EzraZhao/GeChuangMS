@@ -19,10 +19,7 @@ public class ForgetPasswordActivity extends BaseActivity {
     Button btBack;
     @BindView(R.id.tv_title)
     TextView tvTitle;
-    @BindView(R.id.bt_email_go)
-    Button ivEmailGo;
-    @BindView(R.id.bt_phone_go)
-    Button ivPhoneGo;
+
 
     @Override
     protected void init() {
@@ -30,18 +27,18 @@ public class ForgetPasswordActivity extends BaseActivity {
         tvTitle.setText(R.string.find_password);
     }
 
-    @OnClick({R.id.bt_back, R.id.bt_email_go, R.id.bt_phone_go})
+    @OnClick({R.id.bt_back, R.id.cv_email, R.id.cv_phone})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_back:
                 // TODO: 2017/6/13  
                 finish();
                 break;
-            case R.id.bt_email_go:
-                startActivity(FindPasswordByEmailActivity.class);
+            case R.id.cv_email:
+                startActivity(FindPasswordByEmailActivity.class, false);
                 break;
-            case R.id.bt_phone_go:
-                startActivity(FindPasswordByPhoneActivity.class);
+            case R.id.cv_phone:
+                startActivity(FindPasswordByPhoneActivity.class, false);
                 break;
         }
     }

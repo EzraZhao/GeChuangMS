@@ -5,40 +5,7 @@
     android:background="@mipmap/ic_login_background"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/rl_register_header"
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
-
-        <ImageView
-            android:id="@+id/iv_register_header_bg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/ic_register_header_bg" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ic_default_user_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_above="@+id/bt_register_user_icon_ed"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginStart="40dp"
-            android:src="@mipmap/ic_logo" />
-
-        <Button
-            android:id="@+id/bt_register_user_icon_ed"
-            android:layout_width="30dp"
-            android:layout_height="28dp"
-            android:layout_alignBottom="@+id/iv_register_header_bg"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
-            android:background="@mipmap/ic_register_header_edit" />
-
-    </RelativeLayout>
+    <include layout="@layout/user_image_header" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -56,7 +23,7 @@
             android:layout_alignStart="@+id/bt_register_sign_up"
             android:layout_below="@+id/rl_register_header"
             android:layout_marginTop="15dp"
-            android:background="@mipmap/ic_register_basic_info_1" />
+            android:background="@mipmap/ic_register_basic_info" />
 
         <EditText
             android:id="@+id/ed_register_account"
@@ -83,7 +50,7 @@
             android:layout_alignStart="@+id/bt_register_sign_up"
             android:layout_below="@+id/ed_register_password"
             android:layout_margin="5dp"
-            android:background="@mipmap/ic_register_private_info_1" />
+            android:background="@mipmap/ic_register_private_info" />
 
         <EditText
             android:id="@+id/ed_register_name"
@@ -153,7 +120,8 @@
         android:background="@mipmap/ic_register_sign_up"
         android:layout_above="@+id/bt_already_hava_account"
         android:layout_alignRight="@+id/ll_ed"
-        android:layout_alignEnd="@+id/ll_ed" />
+        android:layout_alignEnd="@+id/ll_ed"
+        android:layout_marginBottom="8dp"/>
 
     <Button
         android:id="@+id/bt_already_hava_account"
@@ -161,6 +129,7 @@
         android:layout_height="35dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         android:background="@mipmap/ic_register_already_have_account" />
 
 </RelativeLayout>
