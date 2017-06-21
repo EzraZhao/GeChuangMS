@@ -4,7 +4,6 @@ import com.gechuangms.app.Config;
 import com.gechuangms.model.GCUser;
 import com.gechuangms.view.IUpdataUserInfoView;
 
-import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 
@@ -36,9 +35,9 @@ public class UpdataUserInfoPresenterImpl implements IUpdataUserInfoPresenter {
             @Override
             public void done(BmobException e) {
                 if (e == null) {
-                    mIUpdataUserInfoView.onUpdataSuccess();
+                    mIUpdataUserInfoView.onSuccess();
                 } else {
-                    mIUpdataUserInfoView.onUpdataFail(e);
+                    mIUpdataUserInfoView.onFail(e);
                 }
             }
         });

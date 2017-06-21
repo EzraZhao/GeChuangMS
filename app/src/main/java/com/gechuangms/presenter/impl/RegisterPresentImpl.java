@@ -58,9 +58,9 @@ public class RegisterPresentImpl implements IRegisterPresent {
             public void done(GCUser gcUser, BmobException e) {
                 if (e == null) {
                     Config.CURRENT_USER = gcUser;
-                    mIRegisterView.onRegisterSuccess();
+                    mIRegisterView.onSuccess();
                 } else {
-                    mIRegisterView.onRegisterFail(e);
+                    mIRegisterView.onFail(e);
                 }
             }
         });

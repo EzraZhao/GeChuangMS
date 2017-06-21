@@ -87,13 +87,13 @@ public class RelatedToMeFragment extends BaseFragment implements IRelatedView {
     }
 
     @Override
-    public void onGetMessageSuccess() {
+    public void onSuccess() {
         hideProgress();
         toast(getString(R.string.load_success));
     }
 
     @Override
-    public void onGetMessageFail(BmobException e) {
+    public void onFail(BmobException e) {
         hideProgress();
         toast(e.getMessage());
     }

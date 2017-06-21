@@ -100,7 +100,7 @@ public class FindPasswordByPhoneActivity extends BaseActivity implements IFindPa
     }
 
     @Override
-    public void onUpdatePasswordSuccess() {
+    public void onSuccess() {
         ivYes.setVisibility(View.VISIBLE);
         tvUpdatePasswordSuccessTips.setVisibility(View.VISIBLE);
         ThreadUtils.runOnBackgroundThread(new Runnable() {
@@ -117,7 +117,7 @@ public class FindPasswordByPhoneActivity extends BaseActivity implements IFindPa
     }
 
     @Override
-    public void onUpdatePasswordFail(BmobException e) {
+    public void onFail(BmobException e) {
         imNo.setVisibility(View.VISIBLE);
         tvUpdatePasswordErrorTips.setVisibility(View.VISIBLE);
         toast(e.getMessage());

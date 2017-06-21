@@ -46,9 +46,9 @@ public class RelatedPresentImpl implements IRelatedPresent {
                 if (e == null) {
                     Log.i(TAG, "done: " + list.size());
                     setList(list);
-                    mIRelatedView.onGetMessageSuccess();
+                    mIRelatedView.onSuccess();
                 } else {
-                    mIRelatedView.onGetMessageFail(e);
+                    mIRelatedView.onFail(e);
                 }
             }
         });

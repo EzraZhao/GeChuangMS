@@ -42,9 +42,9 @@ public class FindPasswordByPhonePresentImpl implements IFindPasswordByPhonePrese
             @Override
             public void done(BmobException ex) {
                 if (ex == null) {
-                    mIFindPasswordByPhone.onUpdatePasswordSuccess();
+                    mIFindPasswordByPhone.onSuccess();
                 } else {
-                    mIFindPasswordByPhone.onUpdatePasswordFail(ex);
+                    mIFindPasswordByPhone.onFail(ex);
                 }
             }
         });

@@ -93,7 +93,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     }
 
     @Override
-    public void onRegisterSuccess() {
+    public void onSuccess() {
         hideProgress();
         startActivity(MainActivity.class);
     }
@@ -104,7 +104,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     }
 
     @Override
-    public void onRegisterFail(BmobException e) {
+    public void onFail(BmobException e) {
         hideProgress();
         toast(e.getMessage());
     }

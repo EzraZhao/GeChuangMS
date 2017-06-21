@@ -32,9 +32,9 @@ public class PrizePresentImpl implements IPrizePresenter {
             public void done(List<GCPrize> list, BmobException e) {
                 if (e == null) {
                     mIPrizeView.onGetAdapter().setListData(list);
-                    mIPrizeView.onGetInfoSuccess();
+                    mIPrizeView.onSuccess();
                 } else {
-                    mIPrizeView.onGetInfoFail(e);
+                    mIPrizeView.onFail(e);
                 }
             }
         });

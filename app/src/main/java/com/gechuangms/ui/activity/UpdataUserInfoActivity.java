@@ -82,13 +82,13 @@ public class UpdataUserInfoActivity extends BaseActivity implements IUpdataUserI
     }
 
     @Override
-    public void onUpdataSuccess() {
+    public void onSuccess() {
         finish();
         toast(getString(R.string.updata_success));
     }
 
     @Override
-    public void onUpdataFail(BmobException e) {
+    public void onFail(BmobException e) {
         toast(e.getMessage());
     }
 

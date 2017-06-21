@@ -94,13 +94,13 @@ public class PrizeActivity extends BaseActivity implements IPrizeView {
     };
 
     @Override
-    public void onGetInfoSuccess() {
+    public void onSuccess() {
         hideProgress();
         toast(getString(R.string.load_success));
     }
 
     @Override
-    public void onGetInfoFail(BmobException e) {
+    public void onFail(BmobException e) {
         hideProgress();
         toast(e.getMessage());
     }

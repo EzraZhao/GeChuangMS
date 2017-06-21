@@ -7,7 +7,6 @@ import com.gechuangms.view.IMessageView;
 
 import cn.bmob.v3.datatype.BmobRelation;
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
@@ -34,9 +33,9 @@ public class MessagePresentImpl implements IMessagePresent {
             @Override
             public void done(BmobException e) {
                 if (e == null) {
-                    mIMessageView.onJoinSuccess();
+                    mIMessageView.onSuccess();
                 } else {
-                    mIMessageView.onJoinFail(e);
+                    mIMessageView.onFail(e);
                 }
             }
         });

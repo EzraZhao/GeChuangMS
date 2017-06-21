@@ -8,11 +8,7 @@ import cn.bmob.v3.exception.BmobException;
  * Created by Ezra on 2017/6/3.
  */
 
-public interface IRelatedView {
-
-    void onGetMessageSuccess();
-
-    void onGetMessageFail(BmobException e);
+public interface IRelatedView extends ICallBack {
 
     void onRefreshMessage();
 

@@ -7,7 +7,6 @@ import android.widget.VideoView;
 
 import com.gechuangms.R;
 import com.gechuangms.app.Config;
-import com.gechuangms.view.IIntroductionView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,7 +15,7 @@ import butterknife.ButterKnife;
  * Created by Ezra on 2017/6/9.
  */
 
-public class IntroductionActivity extends BaseActivity implements IIntroductionView {
+public class IntroductionActivity extends BaseActivity {
 
 
     @BindView(R.id.vv_introduction_video)

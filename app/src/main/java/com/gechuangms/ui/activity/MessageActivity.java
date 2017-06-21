@@ -75,12 +75,12 @@ public class MessageActivity extends BaseActivity implements IMessageView {
     }
 
     @Override
-    public void onJoinSuccess() {
+    public void onSuccess() {
         toast(getString(R.string.join_activity_success));
     }
 
     @Override
-    public void onJoinFail(BmobException e) {
+    public void onFail(BmobException e) {
         toast(e.getMessage());
     }
 
